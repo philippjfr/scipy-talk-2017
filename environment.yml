@@ -15,3 +15,4 @@ dependencies:
   - datashader
   - paramnb
   - rise
+  - jupyter_dashboards
