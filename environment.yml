@@ -16,3 +16,5 @@ dependencies:
   - paramnb
   - rise
   - jupyter_dashboards
+  - fastparquet
+  - python-snappy
