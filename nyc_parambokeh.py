@@ -18,7 +18,7 @@ class NYCTaxiExplorer(hv.streams.Stream):
     alpha      = param.Magnitude(default=0.75, doc="Alpha value for the map opacity")
     colormap   = param.ObjectSelector(default=cm["fire"], objects=[cm[k] for k in cm.keys() if not '_' in k])
     plot       = param.ObjectSelector(default="pickup",   objects=["pickup","dropoff"])
-    passengers  = param.Range(default=passenger_counts, bounds=passenger_counts)
+    passengers = param.Range(default=passenger_counts, bounds=passenger_counts)
     output     = parambokeh.view.Plot()
 
     def make_view(self, x_range, y_range, alpha, colormap, plot, passengers, **kwargs):
