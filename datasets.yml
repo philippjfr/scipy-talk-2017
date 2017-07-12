@@ -1,0 +1,8 @@
+---
+
+data:
+
+  - url: https://s3-eu-west-1.amazonaws.com/assets.holoviews.org/nyc_taxi.parq.zip
+    title: 'NYC Taxi Data'
+    files:
+      - nyc_taxi.parq
