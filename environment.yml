@@ -1,0 +1,17 @@
+name: scipy2017
+channels:
+  - ioam
+  - bokeh
+  - conda-forge
+  - damianavila82
+  - defaults
+dependencies:
+  - python=3
+  - notebook
+  - holoviews
+  - geoviews
+  - pandas
+  - xarray
+  - datashader
+  - paramnb
+  - rise
