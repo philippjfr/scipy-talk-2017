@@ -32,12 +32,15 @@ def filter_count(agg, min_count, **kwargs):
 
 def hline_fn(min_count, **kwargs): return hv.VLine(min_count)
 
+def tiles_fn(alpha, **kwargs): return tiles.opts(style=dict(alpha=alpha))
+
 explorer = OSMExplorer(name="OpenStreetMap GPS Explorer")
 
+tile = hv.DynamicMap(tiles_fn, streams=[explorer])
 agg = aggregate(hv.Points(df))
 filtered = hv.util.Dynamic(agg, operation=filter_count, streams=[explorer])
 shaded = shade(filtered, streams=[explorer])
 hline = hv.DynamicMap(hline_fn, streams=[explorer])
-explorer.output = (tiles * shaded) << histogram(agg, log=True) * hline
+explorer.output = (tile * shaded) << histogram(agg, log=True) * hline
 
 doc = parambokeh.Widgets(explorer, view_position='right', callback=explorer.event, mode='server')
