@@ -18,3 +18,4 @@ dependencies:
   - jupyter_dashboards
   - fastparquet
   - python-snappy
+  - parambokeh
